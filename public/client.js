@@ -17,6 +17,8 @@ function sendMessage(message) {
         user: name,
         message: message.trim()
     }
+    if(msg.message!="")
+    {
     // Append 
     appendMessage(msg, 'outgoing')
     textarea.value = ''
@@ -24,6 +26,8 @@ function sendMessage(message) {
 
     // Send to server 
     socket.emit('message', msg)
+    }
+
 
 }
 
